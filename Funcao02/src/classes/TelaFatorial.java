@@ -33,6 +33,7 @@ public class TelaFatorial extends javax.swing.JFrame {
         lblResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btnFatorial.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnFatorial.setText("!");
@@ -42,8 +43,13 @@ public class TelaFatorial extends javax.swing.JFrame {
             }
         });
 
+        lblFormula.setBackground(new java.awt.Color(255, 0, 0));
+        lblFormula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblFormula.setForeground(new java.awt.Color(255, 0, 0));
         lblFormula.setText("Formula");
 
+        lblResultado.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(0, 0, 255));
         lblResultado.setText("Resultado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -56,12 +62,13 @@ public class TelaFatorial extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnFatorial))
+                        .addComponent(btnFatorial)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblFormula, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                        .addComponent(lblFormula, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,7 +81,7 @@ public class TelaFatorial extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFormula)
                     .addComponent(lblResultado))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
