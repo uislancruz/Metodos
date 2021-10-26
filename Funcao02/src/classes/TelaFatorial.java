@@ -27,21 +27,68 @@ public class TelaFatorial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtNum = new javax.swing.JSpinner();
+        btnFatorial = new javax.swing.JButton();
+        lblFormula = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnFatorial.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnFatorial.setText("!");
+        btnFatorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFatorialActionPerformed(evt);
+            }
+        });
+
+        lblFormula.setText("Formula");
+
+        lblResultado.setText("Resultado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnFatorial))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblFormula, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFatorial, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFormula)
+                    .addComponent(lblResultado))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnFatorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFatorialActionPerformed
+        // TODO add your handling code here:
+        
+        int n = Integer.parseInt(txtNum.getValue().toString());
+        Fatorial f = new Fatorial();
+        f.setValor(n);
+        lblFormula.setText(f.getFormula());
+        lblResultado.setText(Integer.toString(f.getFatorial()));
+    }//GEN-LAST:event_btnFatorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +126,9 @@ public class TelaFatorial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFatorial;
+    private javax.swing.JLabel lblFormula;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JSpinner txtNum;
     // End of variables declaration//GEN-END:variables
 }
